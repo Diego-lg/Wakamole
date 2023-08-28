@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 
 function myMiddleware(req, res, next) {
-  const apiUrl = "https://gifted-wildflower-54265.pktriot.net/generate"; // Update with the correct API URL
+  const apiUrl = "https://gifted-wildflower-54265.pktriot.net/"; // Update with the correct API URL
   const stringToSend = "Samoyed dog"; // Replace with your actual string
   console.log("stringToSend:", stringToSend);
   // Make a request to the API endpoint
