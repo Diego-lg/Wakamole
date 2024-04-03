@@ -4,7 +4,7 @@ import { easing } from "maath";
 import { useSnapshot } from "valtio";
 
 import state from "../store";
-
+let timer = 0;
 const CameraRig = ({ children }) => {
   const group = useRef();
   const snap = useSnapshot(state);
@@ -22,8 +22,14 @@ const CameraRig = ({ children }) => {
       if (isMobile) targetPosition = [0, 0, 2.5];
       else targetPosition = [0, 0, 2];
     }
+    //animation duration
 
-    easing.damp3(state.camera.position, targetPosition, 0.25, delta);
+    const duration = 2; // 5 seconds
+    if (timer < duration) {
+      console.log(timer);
+      timer += delta;
+      easing.damp3(state.camera.position, targetPosition, 0.25, delta);
+    }
 
     easing.dampE(
       group.current.rotation,
