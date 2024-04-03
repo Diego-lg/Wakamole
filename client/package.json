@@ -15,12 +15,14 @@
     "@react-three/drei": "^9.80.6",
     "@react-three/fiber": "^8.13.7",
     "@react-three/postprocessing": "^2.15.1",
+    "@vercel/analytics": "^1.0.2",
     "framer-motion": "^10.16.1",
     "maath": "^0.7.0",
     "react-color": "^2.19.3",
     "react-snap": "^1.23.0",
     "styled-components": "^6.0.7",
     "three": "^0.155.0",
+    "three.js": "^0.77.0",
     "valtio": "^1.11.2"
   },
   "devDependencies": {

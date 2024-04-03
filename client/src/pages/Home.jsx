@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSnapshot } from "valtio";
+import { Analytics } from "@vercel/analytics/react";
 
 import state from "../store";
 import { CustomButton } from "../components/";
@@ -16,13 +17,14 @@ const Home = () => {
 
   return (
     <AnimatePresence>
+      <Analytics />
       {snap.intro && (
         <motion.section className="home flex flex-col items-center justify-center">
           <motion.header className="mb-4" {...slideAnimation("down")}>
             <img
               src="./00002.png"
               alt="logo"
-              className="w-12 h-12 object-contain transform scale-150"
+              className="logo w-12 h-12 object-contain transform scale-150"
             />
           </motion.header>
           <motion.header
@@ -47,7 +49,7 @@ const Home = () => {
             {...headContainerAnimation}
           >
             <motion.div {...headTextAnimation}>
-              <h1 className="head-Text text-3xl font-bold">
+              <h1 className="head-Text text-3xl font-bold text-white">
                 Unleash <br className="xl:hidden" /> Your Style.
               </h1>
             </motion.div>
@@ -55,7 +57,7 @@ const Home = () => {
               {...headContentAnimation}
               className="flex flex-col gap-5"
             >
-              <p className="max-w-md font-normal text-gray-600 text-base xl:text-xl">
+              <p className="max-w-md font-normal text-white text-base xl:text-xl">
                 <strong>
                   Your Style, Your Way: Step into the future of fashion, where
                   you shape the trends and AI fuels your creativity.
